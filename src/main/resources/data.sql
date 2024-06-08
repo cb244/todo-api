@@ -1,0 +1,1 @@
+INSERT INTO tasks(content) VALUES('タスク内容');
