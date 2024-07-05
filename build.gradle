@@ -22,11 +22,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.data:spring-data-rest-webmvc:4.3.0'
-	
-	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.0'
-	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.0'
-    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.13.0'
-
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	runtimeOnly 'com.h2database:h2'
