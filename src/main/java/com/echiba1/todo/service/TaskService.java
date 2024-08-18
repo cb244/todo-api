@@ -25,10 +25,8 @@ public class TaskService {
     }
 
     public TaskEntity findById(int id) {
-        System.out.println(id);
         Optional<TaskEntity> opt = taskRepository.findById(id);
-        System.out.println(opt.orElseThrow());
-        return opt.orElseThrow();
+        return opt.orElse(null);
     }
 
     public void create(TaskEntity taskEntity) {
@@ -37,8 +35,6 @@ public class TaskService {
     }
 
     public void updateById(int id, TaskEntity taskEntity) {
-        System.out.println(id);
-        System.out.println(taskEntity);
         TaskEntity targetTaskEntity = taskRepository.findById(id).get();
         System.out.println(targetTaskEntity);
 
@@ -50,15 +46,14 @@ public class TaskService {
         if (taskEntity.getDone() == null) {
             taskEntity.setDone(targetTaskEntity.getDone());
         }
-        System.out.println(taskEntity);
         taskRepository.save(taskEntity);
     }
 
     public void deleteById(int id) {
-        System.out.println(id);
         if (taskRepository.existsById(id)) {
             taskRepository.deleteById(id);
+            return;
         }
-        System.err.println("no such taskEntitiy");
+        System.out.println("Not exists such TaskEntity");
     }
 }
